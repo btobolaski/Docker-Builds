@@ -1,0 +1,3 @@
+CDATA_NAME=$USER/oc-data
+CNGINX_NAME=$USER/oc-nginx
+CPHP_FPM_NAME=$USER/oc-php-fpm

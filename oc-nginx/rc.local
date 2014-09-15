@@ -1,0 +1,11 @@
+#!/bin/sh
+
+PHP_INI=/etc/php5/fpm/php.ini
+
+if [ ! -z $MAX_UPLOAD_SIZE ]; then
+	sed -i "s/upload_max_filesize.*$/upload_max_filesize = $MAX_UPLOAD_SIZE/g" $PHP_INI
+	sed -i "s/post_max_size.*$/post_max_size = $MAX_UPLOAD_SIZE/g" $PHP_INI
+fi
+
+service php5-fpm start
+service nginx start
